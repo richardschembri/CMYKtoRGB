@@ -63,7 +63,7 @@ namespace CMYKtoRGB
         public MainWindow()
         {
             InitializeComponent();
-            ResetLog();
+            ResetAll();
         }
 
         private string LogCountUIText(int rgbCount, int? thumbCount)
@@ -101,10 +101,15 @@ namespace CMYKtoRGB
             lblEndTime.Content = LogTimeUIText(m_currentLog.EndTime);
         }
 
+        private void ResetAll()
+        {
+            m_imageFilesToProcess = new FileInfo[0];
+            ResetLog();
+        }
+
         private void ResetLog()
         {
             m_currentLog = new Log();
-            m_imageFilesToProcess = new FileInfo[0];
             UpdateLogCountUI();
             UpdateLogTimeUI();
         }
@@ -122,8 +127,8 @@ namespace CMYKtoRGB
             else
             {
                 btnStart.Visibility = Visibility.Collapsed;
-                btnStop.IsEnabled = true;
                 btnStop.Visibility = Visibility.Visible;
+                btnStop.IsEnabled = true;
                 btnChooseFolder.IsEnabled = false;
                 chkThumbnail.IsChecked = false;
             }
@@ -146,6 +151,7 @@ namespace CMYKtoRGB
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
+            ResetLog();
             if(chkThumbnail.IsChecked == true)
             {
                 m_currentLog.ProcessedThumb = 0;
@@ -154,6 +160,7 @@ namespace CMYKtoRGB
             }
             ToggleStartStopButtons(false);
             m_currentLog.StartTime = DateTime.Now;
+            UpdateLogTimeUI();
 
             m_bw = new BackgroundWorker();
             m_bw.WorkerSupportsCancellation = true;
@@ -182,8 +189,6 @@ namespace CMYKtoRGB
         private void M_bw_DoWork(object sender, DoWorkEventArgs e)
         {
             var imageFilesToProcess = (FileInfo[])e.Argument;
-            int errorCount = 0;
-            int processedCount = 0;
 
             Parallel.For(0, imageFilesToProcess.Length, (i, loopState) =>
             {
@@ -194,6 +199,7 @@ namespace CMYKtoRGB
                     return;
                 }
                 var convertResult = ImageTools.ConvertToRGB(imageFilesToProcess[i], true, false);
+                LogResult(convertResult);
                 System.Windows.Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, (Action)(() => UpdateLogCountUI()));
             });
         }

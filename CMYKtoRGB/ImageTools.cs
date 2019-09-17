@@ -47,8 +47,9 @@ namespace CMYKtoRGB
 
         private static bool OutputPathCheck(FileInfo imageFI, string outputFolderName, out string outputFolderPath , out string outputFilePath)
         {
-            outputFolderPath = string.Format("{0}/ScaledDownOutput", imageFI.DirectoryName);
+            outputFolderPath = string.Format("{0}/{1}", imageFI.DirectoryName, outputFolderName);
             outputFilePath = string.Format("{0}/{1}", outputFolderPath, imageFI.Name);
+            FileHelpers.CreateDirectoryIfNotExists(outputFilePath);
             return File.Exists(outputFilePath);
         }
 

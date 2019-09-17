@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMYKtoRGB"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="375" MinWidth="800" Height="375" Width="800">
+        Title="MainWindow" MinHeight="500" MinWidth="850" Height="500" Width="850">
     <Grid >
 
         <!-- <ProgressBar x:Name="pbProgress" Visibility="Hidden" HorizontalAlignment="Center" Height="40" Margin="0,0,0,70" VerticalAlignment="Bottom" Width="400" SmallChange="1" Value="0"  ValueChanged="ProgressBar_ValueChanged"/>-->
-        <Border Margin="0,30,0,30" Width="750" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2">
+        <Border Margin="20,30,20.0,0" Width="750" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2" Height="405">
             <Grid Margin="20,20,20,20">
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Height="220" Width="350" >
                     <Button x:Name="btnChooseFolder" Content="フォルダー選択" Padding="20,7,20,7" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#404040" Foreground="White" FontWeight="Bold" FontSize="15" Click="BtnChooseFolder_Click" />
                     <Label x:Name="lblFolderPath" Content="無し" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="ForestGreen" FontWeight="Bold" />
                     <Button x:Name="btnStart" Content="スタート" HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Bottom" Padding="20,7,20,7" Background="#FF46872D" Foreground="White" FontWeight="Bold" FontSize="15" Click="BtnStart_Click"/>
                     <CheckBox x:Name="chkThumbnail" Content="サムネイル付き" HorizontalAlignment="Left" Margin="246,103,10,0" FontWeight="Bold" VerticalAlignment="Top" IsChecked="True"/>
-                    <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Right" Margin="0,0,0,100" VerticalAlignment="Bottom" Padding="20,7,20,7"  Background="#C41A00" Foreground="White" FontWeight="Bold" FontSize="15" Visibility="Collapsed" Click="BtnStop_Click" />
+                    <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Bottom" Padding="20,7,20,7"  Background="#C41A00" Foreground="White" FontWeight="Bold" FontSize="15" Visibility="Collapsed" Click="BtnStop_Click" />
 
                     <Button x:Name="btnErrorFolder" Content="エラーフォルダを開く" Padding="10,7,10,7" Margin="0,0,0,30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#404040" Foreground="White" FontWeight="Bold" FontSize="15" />
                     <Button x:Name="btnOutputFolder" Content="出力フォルダを開く" Padding="10,7,10,7" Margin="0,0,0,30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#404040" Foreground="White" FontWeight="Bold" FontSize="15" />
                 </Grid>
-                <Grid Width="320" Height="230" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#ebf0df">
+                <Grid Width="320" Height="280" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#ebf0df" >
                     <Label x:Name="lblTotalHeader" Content="総件数:" HorizontalAlignment="Left" Margin="20,20,0,0" Height="30" Width="110" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Right"/>
                     <Label x:Name="lblTotal" Content="0" HorizontalAlignment="Right" Margin="0,20,15,0" Height="30" Width="150" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
 
