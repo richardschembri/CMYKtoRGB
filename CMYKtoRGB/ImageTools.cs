@@ -77,6 +77,7 @@ namespace CMYKtoRGB
 
             try
             {
+            
                 image.AddProfile(ColorProfile.SRGB);
 
                 if (overwrite || !outputFileExists)

@@ -17,9 +17,6 @@
                     <Button x:Name="btnStart" Content="スタート" HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Bottom" Padding="20,7,20,7" Background="#FF46872D" Foreground="White" FontWeight="Bold" FontSize="15" Click="BtnStart_Click"/>
                     <CheckBox x:Name="chkThumbnail" Content="サムネイル付き" HorizontalAlignment="Left" Margin="246,103,10,0" FontWeight="Bold" VerticalAlignment="Top" IsChecked="True"/>
                     <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Bottom" Padding="20,7,20,7"  Background="#C41A00" Foreground="White" FontWeight="Bold" FontSize="15" Visibility="Collapsed" Click="BtnStop_Click" />
-
-                    <Button x:Name="btnErrorFolder" Content="エラーフォルダを開く" Padding="10,7,10,7" Margin="0,0,0,30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#404040" Foreground="White" FontWeight="Bold" FontSize="15" />
-                    <Button x:Name="btnOutputFolder" Content="出力フォルダを開く" Padding="10,7,10,7" Margin="0,0,0,30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#404040" Foreground="White" FontWeight="Bold" FontSize="15" />
                 </Grid>
                 <Grid Width="320" Height="280" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#ebf0df" >
                     <Label x:Name="lblTotalHeader" Content="総件数:" HorizontalAlignment="Left" Margin="20,20,0,0" Height="30" Width="110" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Right"/>
